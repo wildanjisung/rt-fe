@@ -7,6 +7,10 @@ Teknikal tes untuk Fullstack di Jaghos
 ```
 npm install
 ```
+## Jalankan Aplikasi
+```bash
+npm run serve
+```
 ## Hasil
 - Hasil ketika aplikasi berjalan
 ![Alt text](docs/image.png)
