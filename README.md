@@ -39,4 +39,27 @@ npm install
 note: list penhuni sesuai dengan user yang terdaftar pada saat register
 - simpan
 
-### Mengatur rumah dan pemiliknya
+### Pembayaran tagihan perbulan
+#### Persiapan
+- masuk ke menu Bill, maka akan terlihat seperti berikut
+![Alt text](docs/image3.png)
+- jika data tidak muncul karena belum di generate. generate dulu dengan menggunakan postman
+- import dulu file postman pada repo be.
+![Alt text](docs/image4.png)
+- masuk ke menu bill -> create.
+- sesuaikan payload
+- masukkan date '2023-04-02' untuk tagihan bulan april tahun 2023
+- masukkan residenceId dengan id rumah yang telah dibuat sebelunya
+- siapkan beberapa data dummy untuk penagihan rumah pada bulan tertentu
+
+### pemabayran tagihan
+- tekan tombol pay pada row
+- maka tagihan akan terbayarkan
+
+### Catatan
+#### Filter Tagihan perbulan
+- untuk integrasi belum terimplementasi
+- namun di backend sudah ada filter untuk mendapatkan tagihan per bulan
+![Alt text](docs/image5.png)
+- untuk mendapatkan filter perbulan masukkan parameter startDate dan endDate
+0 untuk filter lainnya ada filter berdasarkan status dan rumah (residenceId)
