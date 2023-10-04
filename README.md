@@ -1,24 +1,42 @@
-# fe
+## Deskripsi
+Teknikal tes untuk Fullstack di Jaghos
 
-## Project setup
+## Persiapan
+- jalankan backend sesuai intruksi pada repository https://github.com/wildanjisung/rt-be
+## Instalasi
 ```
 npm install
 ```
+## Hasil
+- Hasil ketika aplikasi berjalan
+![Alt text](docs/image.png)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Feature
+- Login dan Register User
+- Residence Management untuk mengatur rumah dan siap penghuninya
+- Bill Management untuk mengatur tagihan
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Alur Program
+### Tambah Penghuni (User)
+- masuk ke menu register
+- masukkan username dan password
+- keterangan: buat 3 akun, untuk logout clear local storage
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Mengatur rumah dan pemiliknya
+#### Persiapan - Login
+- masuk dengan salah satu akun dengan memasukkan username dan password pada menu login
+- akan muncul menu Residence dan klik
+#### Tambah Rumah
+![Alt text](docs/image1.png)
+- buat data hunian, dengan menekan tombol 'NEW RESIDENCE'
+- masukkan alamat
+- lalu simpan
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Tambah Penghuni pada Rumah
+![Alt text](docs/image2.png)
+- klik ikon orang pada row. akan muncul kotak dialog untuk menambahkan penghuni
+- pilih penghuni
+note: list penhuni sesuai dengan user yang terdaftar pada saat register
+- simpan
+
+### Mengatur rumah dan pemiliknya
