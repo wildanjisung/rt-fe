@@ -6,6 +6,7 @@ import RegisterView from '../views/RegisterView.vue'
 import ResidenceView from '../views/ResidenceView.vue'
 import BillView from '../views/BillView.vue'
 import DefaultLayout from '../layout/DefaultLayout.vue'
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -32,16 +33,17 @@ const routes = [
       {
         path: '/residence',
         name: 'residence',
-        component: ResidenceView
+        component: ResidenceView,
+        meta: { requiresAuth: true },
       },
       {
         path: '/bill',
         name: 'bill',
-        component: BillView
+        component: BillView,
+        meta: { requiresAuth: true },
       },
     ]
   }
-  
 ]
 
 const router = new VueRouter({
@@ -49,5 +51,17 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (store.getters['user/isAuthenticated']) {
+      next();
+      return;
+    }
+    next("/login");
+  } else {
+    next();
+  }
+});
 
 export default router

@@ -6,6 +6,10 @@ const state = () => ({
   user: [],
 })
 
+const getters = {
+  isAuthenticated: state => state.isLogin,    
+};
+
 const mutations = {
   setToken(state, param) {
     state.token = param
@@ -66,6 +70,7 @@ const actions = {
 
 export default {
   state,
+  getters,
   mutations,
   actions
 }
